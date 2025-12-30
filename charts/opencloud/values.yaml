@@ -98,7 +98,7 @@ keycloak:
   # Internal Keycloak deployment
   internal:
     # Enable internal Keycloak instance
-    enabled: true
+    enabled: false
     # Keycloak image settings
     image:
       # Keycloak image registry
@@ -150,7 +150,7 @@ keycloak:
 # PostgreSQL settings for Keycloak
 postgres:
   # Enable PostgreSQL
-  enabled: true
+  enabled: false
   # PostgreSQL image settings
   image:
     # PostgreSQL image registry
@@ -303,7 +303,7 @@ collabora:
 # OnlyOffice settings for document collaboration
 onlyoffice:
   # Enable OnlyOffice
-  enabled: true
+  enabled: false
   # OnlyOffice image settings
   image:
     # OnlyOffice image registry
