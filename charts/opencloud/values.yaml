@@ -353,12 +353,12 @@ onlyoffice:
         dbPort: "5432"
         dbName: "onlyoffice"
         dbUser: "onlyoffice"
-      
+
       # Secret settings
       secret:
         # Use existing secret for onlyoffice credentials (Note: secretKeyName must be sessionSecret)
         existingSecret: ""
-        
+
         # ignored if onlyoffice.config.coAuthoring.secret.existingSecret is set
         session:
           string: "Dd0SXIe1k9oCfdffgrfNmA0TK1bb1B1d38OFSb"
@@ -430,14 +430,14 @@ opencloud:
   logPretty: false
   # Insecure mode (for self-signed certificates)
   insecure: true
-  
+
   # Use existing secret for opencloud admin credentials (Note: secretKeyName must be adminPassword)
   existingSecret: ""
-  
+
   # Admin password
   # ignored if opencloud.existingSecret is set
   adminPassword: admin
-  
+
   # Create demo users
   createDemoUsers: false
   # Additional services to start
@@ -485,6 +485,20 @@ opencloud:
     appRegistry: {}
     # CSP configuration
     csp: {}
+    # Proxy configuration
+    # Example:
+    #   role_assignment:
+    #   driver: oidc
+    #   oidc_role_mapper:
+    #       role_claim: groups
+    #       role_mapping:
+    #           - role_name: admin              # Opencloud role name
+    #             claim_value: authentik admins # Authentik group name
+    #           - role_name: user
+    #             claim_value: authentik users
+    #           - role_name: guest
+    #             claim_value: authentik users
+    proxy: {}
     # Banned password list configuration
     # Format: Multi-line string (not YAML array)
     # Use the |- syntax to preserve line breaks
@@ -515,7 +529,7 @@ opencloud:
         # -- Enables TLS encrypted communication with the messaging system.
         # Recommended for production installations.
         enabled: false
-        
+
         # -- Set only to false, if the certificate of your messaging system service is not trusted.
         # If set to false, you need to put the CA cert of the messaging system server into the secret referenced by "caSecretName"
         certTrusted: true
@@ -532,7 +546,7 @@ opencloud:
   # =====================================================================
   # EMAIL (SMTP)
   # =====================================================================
-  
+
   # SMTP settings for email notifications
   smtp:
     # Enable SMTP
@@ -543,10 +557,10 @@ opencloud:
     port: "587"
     # SMTP sender
     sender: ""
-    
+
     # Use existing secret for opencloud smtp credentials (Note: secretKeyName must be smtpUser and smtpPassword)
     existingSecret: ""
-    
+
     # SMTP username
     # ignored if opencloud.smtp.existingSecret is set
     username: ""
@@ -565,7 +579,7 @@ opencloud:
   # =====================================================================
   # STORAGE CONFIGURATION
   # =====================================================================
-  
+
   # Storage configuration
   storage:
     # Storage mode for user files, can be "s3" (default) or "posixfs"
@@ -590,10 +604,10 @@ opencloud:
         httpRoute:
           # Enable HTTPRoute for MinIO (default: false)
           enabled: false
-        
+
         # Use existing secret for minio credentials (Note: secretKeyName must be rootUser and rootPassword)
         existingSecret: ""
-        
+
         # Minio Root user
         # ignored if opencloud.storage.s3.internal.existingSecret is set
         rootUser: opencloud
@@ -601,7 +615,7 @@ opencloud:
         # Minio Root password
         # ignored if opencloud.storage.s3.internal.existingSecret is set
         rootPassword: opencloud-secret-key
-        
+
         # Bucket name
         bucketName: opencloud-bucket
         # Region (optional)
@@ -633,10 +647,10 @@ opencloud:
         endpoint: ""
         # External S3 region
         region: "default"
-        
+
         # Use existing secret for external s3 credentials (Note: secretKeyName must be accessKey and secretKey)
         existingSecret: ""
-        
+
         # External S3 access key
         # ignored if opencloud.storage.s3.external.existingSecret is set
         accessKey: ""
