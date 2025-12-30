@@ -1,58 +1,14 @@
-> [!CAUTION]
-> ## This repository has been archived
-> Due to the high amount of AI generated contributions and poor maintenance, this repository has been archived.
->  
-> For **production-ready Helm charts** designed for **mission-critical** workloads, please use the enterprise offering, available with a [business subscription](https://opencloud.eu/en/product/service-and-support).  
->  
-> To access **production-ready helm charts** get in touch with us via [contact form](https://opencloud.eu/en/contact-us) or Email [sales@opencloud.eu](mailto:sales@opencloud.eu).
+# OpenCloud Helm Chart
 
-# Community Helm Charts
-
-Welcome to the **OpenCloud Helm Charts** repository! This repository is intended as a community-driven space for developing and maintaining Helm charts for deploying OpenCloud on Kubernetes.
-**Community Maintained** This repository is **community-maintained** and **not officially supported by OpenCloud GmbH**. Use at your own risk, and feel free to contribute to improve the project!
+This is a fork of the archived **OpenCloud Helm Charts** repository for personal use.
 
 ## 📑 Table of Contents
 
-- [About](#-about)
-- [Community](#-community)
-- [Contributing](#-contributing)
 - [Prerequisites](#prerequisites)
 - [Version Stability Notice](#⚠️-version-stability-notice)
 - [Available Charts](#-available-charts)
   - [Production Chart](#production-chart-chartsopencloud)
-  - [Microservices Chart](#microservices-chart-chartsopencloud-microservices)
-  - [Development Chart](#development-chart-chartsopencloud-dev)
 - [License](#-license)
-- [Community Maintained](#community-maintained)
-
-## 🚀 About
-
-This repository is created to **welcome contributions from the community**. It does not contain official charts from OpenCloud GmbH and is **not officially supported by OpenCloud GmbH**. Instead, these charts are maintained by the open-source community.
-
-OpenCloud is a cloud collaboration platform that provides file sync and share, document collaboration, and more. This Helm chart deploys OpenCloud with Keycloak for authentication, MinIO for object storage, and multiple options for document editing including Collabora and OnlyOffice.
-
-## 💬 Community
-
-Join our Matrix chat for discussions about OpenCloud Helm Charts:
-- [OpenCloud Helm on Matrix](https://matrix.to/#/%23opencloud-helm:matrix.org)
-
-For general OpenCloud discussions:
-- [OpenCloud on Matrix](https://matrix.to/#/%23opencloud:matrix.org)
-- [OpenCloud on Mastodon](https://social.opencloud.eu/@OpenCloud)
-- [GitHub Discussions](https://github.com/orgs/opencloud-eu/discussions)
-
-## 💡 Contributing
-
-We encourage contributions from the community! This repository follows a community-driven development model with defined roles and responsibilities.
-
-For detailed contribution guidelines, please see our [CONTRIBUTING.md](./CONTRIBUTING.md) document.
-
-This includes:
-- How to submit contributions
-- Our community governance model
-- How to become a reviewer or maintainer
-
-The current maintainers and reviewers are listed in [MAINTAINERS.md](./MAINTAINERS.md).
 
 ## Prerequisites
 
@@ -87,34 +43,6 @@ The complete OpenCloud deployment with all components for production use:
 
 [View Production Chart Documentation](./charts/opencloud/README.md)
 
-### Microservices Chart (`charts/opencloud-microservices`)
-
-**Architecture**: Pod-per-service
-- Every single service in its own pod
-- Full Gateway API integration
-- NATS service discovery required
-- Keycloak for authentication
-- MinIO for object storage
-- Integrated OpenLDAP 
-- Integrated ClamAV
-- Posix support
-- Helm and Timoni Chart for FluxCD
-- Document editing with Collabora and/or OnlyOffice
-- Slightly higher resource usage due to microservices pod overhead
-- See [architectural warnings](./charts/opencloud-microservices/README.md#architectural-considerations)
-
-### Development Chart (`charts/opencloud-dev`)
-
-A lightweight single-container deployment for development and testing:
-
-- Simplified deployment (single Docker container)
-- Minimal resource requirements
-- Quick setup for testing
-
-[View Development Chart Documentation](./charts/opencloud-dev/README.md)
-
 ## 📜 License
 
 This project is licensed under the **AGPLv3** license. See the [LICENSE](LICENSE) file for more details.
-
-
