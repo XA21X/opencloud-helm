@@ -543,6 +543,14 @@ opencloud:
         # Only used if certTrusted is false
         caSecretName : opencloud-nats-ca
 
+  proxy:
+    oidc:
+      # Sets how OIDC access tokens should be verified. Possible values are 'none' and 'jwt'. When using 'none',
+      # no special validation apart from using it for accessing the IDP's userinfo endpoint will be done. When using
+      # 'jwt', it tries to parse the access token as a jwt token and verifies the signature using the keys published
+      # on the IDP's 'jwks_uri'.
+      accessTokenVerifyMethod: "jwt"
+
   # =====================================================================
   # EMAIL (SMTP)
   # =====================================================================
