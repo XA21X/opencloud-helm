@@ -551,6 +551,9 @@ opencloud:
       # on the IDP's 'jwks_uri'.
       accessTokenVerifyMethod: "jwt"
 
+      # The OIDC claim used to create the users role assignment.
+      roleClaim: "roles"
+
   web:
     oidc:
       # OIDC scopes to request during authentication to authorize access to user details. Upstream defaults to
