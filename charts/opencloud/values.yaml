@@ -551,6 +551,13 @@ opencloud:
       # on the IDP's 'jwks_uri'.
       accessTokenVerifyMethod: "jwt"
 
+  web:
+    oidc:
+      # OIDC scopes to request during authentication to authorize access to user details. Upstream defaults to
+      # 'openid profile email' but the helm chart extends it for Keycloak integration. Values are separated by blank.
+      # More example values but not limited to are 'address' or 'phone' etc.
+      scope: "openid profile email groups roles"
+
   # =====================================================================
   # EMAIL (SMTP)
   # =====================================================================

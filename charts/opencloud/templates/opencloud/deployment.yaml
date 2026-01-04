@@ -265,7 +265,7 @@ spec:
               value: {{ printf "https://%s/realms/%s/.well-known/openid-configuration" (include "opencloud.keycloak.domain" .) .Values.keycloak.internal.realm | quote }}
               {{- end }}
             - name: WEB_OIDC_SCOPE
-              value: "openid profile email groups roles"
+              value: {{ .Values.opencloud.web.oidc.scope | default "openid profile email groups roles" | quote }}
             {{- end }}
             # Admin user password
             - name: IDM_ADMIN_PASSWORD
